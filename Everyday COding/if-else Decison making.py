@@ -1,9 +1,9 @@
 def Solution(n: int, m: int) -> str:
     # code here
     if n < m:
-        return "lesser"
+        return "Lesser"
     elif n > m:
-        return "greater"
+        return "Greater"
     else:
-        return "equal"
+        return "Equal"
 print(Solution(4,8))
