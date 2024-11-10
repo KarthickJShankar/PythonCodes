@@ -7,6 +7,13 @@ def Solution(arr):
         final_list.append(new_list)
     return final_list
 
+import numpy
+a = numpy.array([
+ [1, 2, 3],
+ [4, 5, 6],
+ [7, 8, 9]
+])
+print(a.transpose())
 a = [
  [1, 2, 3],
  [4, 5, 6],

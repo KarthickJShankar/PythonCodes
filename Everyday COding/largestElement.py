@@ -1,10 +1,10 @@
 def Solution(arr):
     # return max(arr)
-    Temp = arr[0]
+    temp = arr[0]
     for n in arr[1:]:
-        if Temp < n:
-            Temp = n
-    return Temp
+        if temp < n:
+            temp = n
+    return temp
 
 
 print(Solution([1,2,3,4,77,6,7]))
