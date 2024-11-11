@@ -11,3 +11,5 @@ def Solution(arr):
     return max(dict,key=dict.get)
 
 print(Solution([1, 3, 3, 7, 8, 8, 8, 9, 10]))
+
+
