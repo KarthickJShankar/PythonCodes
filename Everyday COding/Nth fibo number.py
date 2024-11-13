@@ -1,3 +1,4 @@
+
 def Solution(n,):
     a = 0
     b = 1
@@ -7,3 +8,6 @@ def Solution(n,):
         b +=a
     return b
 print(Solution(10))
+
+
+
