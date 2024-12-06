@@ -1,4 +1,4 @@
-arr = [10, 20, 4, 450, 99]
+arr = [10, 20, 4, 450, 99, 450]
 def Solution(arr):
     # temp = arr[0]
     # for n in arr:
