@@ -6,3 +6,5 @@ def Solution(arr,X):
     return -1
 
 print(Solution([2,5,3,4,3,3,2],8))
+
+
