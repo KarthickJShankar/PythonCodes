@@ -1,3 +1,4 @@
+
 def Solution(arr):
     count = 0
     while count<3:
