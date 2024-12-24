@@ -1,3 +1,5 @@
+
+
 def Solution(w1,w2):
     # if len(w1)!=len(w2):
     #     return False

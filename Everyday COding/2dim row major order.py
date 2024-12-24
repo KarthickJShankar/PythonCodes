@@ -9,5 +9,8 @@ def Solution(arr):
 
     return new_arr
 
+# def Solution(a):
+#     result = [m for n in zip(*a) for m in n]
+#     return sorted(result)
 print(Solution(a))
 

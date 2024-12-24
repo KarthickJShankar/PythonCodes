@@ -5,4 +5,7 @@ class Solution:
         # code here
         new_list = []
         divided_by = math.sqrt(N)
-        return int(math.ceil(divided_by-1))
+        return round(divided_by)
+
+s= Solution()
+print(s.countSquares(22))

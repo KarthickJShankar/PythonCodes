@@ -1,10 +1,13 @@
 def Solution(arr1,d):
-    for n in range(len(arr1)):
-        for m in range(len(arr1[0])):
-            if d == arr1[n][m]:
-                return (n,m)
-
-    return -1
+    row = 0
+    col = 0
+    while row<len(arr1):
+        if arr1[row][col]==d:
+            return (row,col)
+        col+=1
+        if col>=len(arr1[0]):
+            col = 0
+        row+=1
 
 matrix = [
     [1, 4, 7, 11],

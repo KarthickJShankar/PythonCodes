@@ -419,3 +419,261 @@ def solution(st1,st2):
 
 
 print(solution('abcd','bd'))
+#**********************************************************************************************************************8
+from abc import ABC, abstractmethod
+class Animal(ABC):
+
+    @abstractmethod
+    def sound(self):
+        pass
+
+
+    def color(self):
+        return 'White'
+
+class Dog(Animal):
+
+    def sound(self):
+        return 'Bark'
+
+    def color(self):
+        return 'Black'
+
+
+# a = Animal()
+# c = Dog()
+# print(c.color())
+# print(c.sound())
+#***************************************************************************************************
+
+
+class Dog:
+    color = 'White'
+    def __init__(self,sound,color):
+        self.sound = sound
+        self.color = color
+
+    def sound_normal(self):
+        return self.sound
+
+    @classmethod
+    def cls_color(cls):
+        return cls.color
+
+    @staticmethod
+    def st_calculate(a,b):
+        return a+b
+
+# d = Dog('Meow','Black')
+# print(d.color)
+# print(d.st_calculate(10,20))
+# print(d.sound_normal())
+
+#**********************************************************************************************
+
+
+def solution(*args,**kwargs):
+    for n in args:
+        print(n,end=" ")
+    for m,n in kwargs.items():
+        print(m+':'+n)
+
+# print(solution(1,2,3,4,Dog='bark',Cat='Meow'))
+
+#**********************************************************************************************
+
+
+class Animal:
+    def __init__(self,sound,color):
+        self.sound = sound
+        self.color = color
+
+    def sound_met(self):
+        return self.sound
+
+    def colo_met(self):
+        return self.color
+
+class Dog(Animal):
+    def __init__(self,sound,color,breed):
+        super().__init__(sound,color)
+        self.breed = breed
+
+    def sound_met(self):
+        return self.sound
+
+    def colo_met(self):
+        return self.color
+
+    def breed_met(self):
+        return self.breed
+
+# a = Animal('Meow','White')
+# print(a.colo_met())
+# print(a.sound_met())
+# d = Dog('Woof','Black','lab')
+# print(d.colo_met())
+# print(d.sound_met())
+# print(d.breed_met())
+
+#**********************************************************************************************
+
+
+class Animal:
+    def __init__(self,sound,color):
+        self._sound = sound
+        self.color = color
+
+    def get_species(self):
+        return self.__species
+
+    def set_species(self,species):
+        self.__species = species
+    def _sound_met(self):
+        return self._sound
+
+    def __colo_met(self):
+        return self.color
+
+    def get_color(self):
+        return self.__colo_met()
+class Dog(Animal):
+    def __init__(self,sound,color,breed):
+        super().__init__(sound,color)
+        self.breed = breed
+
+    def sound_meth(self):
+        return self._sound_met()
+
+    def colo_met(self):
+        return self.color
+
+    def breed_met(self):
+        return self.breed
+
+a = Animal('Meow','White')
+# print(a.set_species('GOlden'))
+# print(a.get_species())
+# print(a.get_color())
+# print(a._sound_met())
+# d = Dog('Woof','Black','lab')
+# print(d.colo_met())
+# print(d.sound_meth())
+# print(d.breed_met())
+
+#****************************************************************************************
+
+def decorator(func):
+    def wrapper(*args):
+        result = func(*args)
+        return result*0.5
+    return wrapper
+
+@decorator
+def calculate(*args):
+    result = 0
+    for n in args:
+        result+=n
+    return result
+
+# print(calculate(1,2,3,4,5,6))
+
+#****************************************************************************************
+
+def generator(arr):
+    for n in arr:
+        yield n
+a = [1,2,3,4,5]
+g = generator(a)
+# for m in g:
+    # print(m,end=" ")
+#*****************************************************************************************
+
+
+b = lambda x:x*2
+a = [1,2,3,4,5,6]
+# print(b(a))
+
+c = list(map(lambda x:x*2,a))
+# print(c)
+
+d = list(filter(lambda x: x%2==0,a))
+# print(d)
+
+
+#****************************************************************************************
+
+def solution(arr):
+    for n in arr:
+        match n:
+            case 1:
+                print('One')
+            case 2:
+                print('Two')
+    return -1
+
+# print(solution([3,4]))
+
+#*******************************************************************************************
+
+# a = [1,2,3,4]
+# b = [5,6,7,8]
+# for m in zip(a,b):
+#     print(m)
+
+#*****************************************************************************************
+
+#REGEX
+import re
+
+def solution(email):
+    pattern = r'^[a-zA-Z1-9_+.]+@[a-z]+\.[a-z]+$'
+    result = re.match(pattern,email)
+    if pattern:
+        return 1
+    else:
+        return 2
+# print(solution('karthick93@gmail.com'))
+
+#****************************************************************************************
+
+def solution1(st):
+    pattern = r'\d{2}-\d{2}-\d{4}'
+    result = re.findall(pattern,st)
+    return result
+
+# print(solution1('The event is on 25-12-2023 and 01-01-2024.'))
+
+#******************************************************************************************
+
+def phonenumber(pno):
+    pattern = r'\d{3}-\d{3}-\d{4}'
+    pattern1 = r'\(\d{3}\) \d{3}-\d{4}$'
+    result = re.findall(pattern,pno)+re.findall(pattern1,pno)
+    return result
+# print(phonenumber('(123) 456-7890'))
+# print(phonenumber('123-456-7890'))
+
+#******************************************************************************************
+
+def capital_letter(st):
+    pattern = r'[A-Z][a-z]+'
+    result = re.findall(pattern,st)
+    return result
+
+# def capital_letter(st):
+#     pattern = r'\b\w*[A-Z]\w*\b'
+#     result = re.findall(pattern, st)
+#     return result
+print(capital_letter('This is a Sample sentence with Some capitalized Words.'))
+
+#******************************************************************************************
+
+def extract_email(st):
+    pattern = r'[a-zA-Z0-9+._/]+@[a-zA-Z]+\.[a-zA-Z]+'
+    result = re.findall(pattern,st)
+    return result
+# print(extract_email('Please contact support@example.com or admin@company.com for more information.'))
+
+
+#******************************************************************************************
